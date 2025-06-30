@@ -59,7 +59,7 @@ for k = 1:N
     y_p = y0 + (h.^alpha ./ ga1) .* predictor_sum;
     
     % Evaluate f at the predicted point
-    f_p = f(t(k+1), y_p);
+    f_p = feval(f,t(k+1), y_p);
     
     % --- CORRECTOR STEP ---
     corrector_sum = zeros(1, num_eqns);
@@ -79,7 +79,7 @@ for k = 1:N
     y(k+1, :) = y0 + (h.^alpha ./ ga2) .* (f_p + corrector_sum);
     
     % Update history with the f value from the new corrected solution
-    f_history(k+1, :) = f(t(k+1), y(k+1, :));
+    f_history(k+1, :) = feval(f, t(k+1), y(k+1, :));
 end
 
 end

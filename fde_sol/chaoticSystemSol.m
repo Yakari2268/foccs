@@ -4,8 +4,8 @@ clear; clc; close all;
 
 % --- 1. System Selection ---
 %system_choice = 'Lorenz';
-%system_choice = 'Chen';
-system_choice = 'Chua';
+system_choice = 'Chen';
+%system_choice = 'Chua';
 %system_choice = 'Bhalekar-Gejji';
 
 fprintf('Selected system: %s\n', system_choice);
@@ -65,7 +65,7 @@ end
 % --- 3. Set Solver Parameters ---
 alpha = [0.9 0.9 0.9];
 tspan = [0, 50];
-N = 5000;
+N = 3000;
 
 % --- 4. Solve the System ---
 fprintf('Solving... This may take a moment for high N.\n');
